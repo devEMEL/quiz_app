@@ -1,0 +1,225 @@
+
+:root {
+    --color-primary: #eb2f64;
+    --color-primary-light: #ff3366;
+    --color-primary-dark: #ba265d;
+
+    --color-grey-light-1: #faf9f9;
+    --color-grey-light-2: #f4f2f2;
+    --color-grey-light-3: #f0eeee;
+    --color-grey-light-4: #ccc;
+
+    --color-grey-dark-1: #333;
+    --color-grey-dark-2: #777;
+    --color-grey-dark-3: #999;   
+    
+    --shadow-light:  0 2rem 5rem gba($color: #000000, $alpha: 0.06);
+    --line: 1px solid var(--color-grey-light-2);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html{
+    font-size: 62.5%;   /*   1rem = 10px   */
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand'sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--color-grey-dark-2);
+    background: linear-gradient(to right bottom, var(--color-primary-light),var(--color-primary-dark));
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container {
+    max-width: 110rem;
+    margin: 1.5rem auto;
+    background: var(--color-grey-light-3);
+    box-shadow: --shadow-light;
+    font-size: 1.6rem;
+    min-height: 64rem;
+    position: relative;
+}
+
+.startgame {
+    padding: 2rem 4rem;
+    font-size: 3rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--color-primary-dark);
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 1px solid var(--color-primary-dark);
+}
+
+.result {
+    text-transform: uppercase;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.result h2 {
+    font-size: 3rem;
+}
+
+.time-remaining {
+    min-height: 7rem;
+    width: 100%;
+    background: var(--color-grey-light-1);
+}
+
+.question-counter {
+    color: #000;
+    text-transform: uppercase;
+    font-weight: 300;
+    line-height: 7rem;
+    letter-spacing: 4px;
+}
+
+.ac {
+    float: left;
+    padding: 0 4rem;
+}
+
+.aq {
+    float: right;
+    padding: 0 4rem;
+}
+
+.question {
+    position: relative;
+    height: 30rem;
+    width: 100%;
+    background: var(--color-primary-dark);
+}
+
+.question-body {
+    position: absolute;
+    color: var(--color-grey-light-1);
+    /*padding: 7rem;  */
+    text-transform: uppercase;
+    font-size: 3rem;
+    /*text-align: center; */
+    font-weight: 600;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 1px;
+    top: 50%;
+    left: 30%;
+    transform: translate(-20%,-50%);
+}
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.box {
+    background-color: transparent;
+    flex: 0 0 49%;
+    border: 1px solid var(--color-grey-dark-2);
+    color: var(--color-grey-dark-2);
+    text-transform: uppercase;
+    margin-top: 2rem;
+    padding: 1rem;
+    font-weight: bold;
+    text-align: left;
+
+    cursor: pointer;
+
+}
+
+.control {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.next,
+.playAgain {
+    border: 1px solid var(--color-grey-dark-2);
+    padding: 1rem 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--color-grey-dark-2);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.playAgain {
+    display: block;
+    margin-top: 5rem;
+    padding: 2rem;
+}
+
+.previous:hover,
+.next:hover {
+    background: var(--color-grey-light-1);
+    /* background-color: #f12323; */
+}
+/*
+   MEDIA QUERIES
+*/
+
+@media only screen and (max-width: 700px) {
+    html{
+        font-size: 50%;   /*   1rem = 8px   */
+        box-sizing: border-box;
+    }    
+
+    .container {
+        margin: 0 auto;
+    }
+    
+    .options {
+        padding: 2rem;
+    }
+
+    .box {
+        flex: 0 0 100%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    html{
+        font-size: 40%;
+        box-sizing: border-box;
+    }    
+
+    .ac {
+        float: none;
+        display: block;
+        padding: 0 4rem;
+    }
+    
+    .aq {
+        float: none;
+        display: block;
+        padding: 0 4rem;
+    }
+    
+}
